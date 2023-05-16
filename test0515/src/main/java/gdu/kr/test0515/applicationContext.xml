@@ -7,6 +7,8 @@
  http://www.springframework.org/schema/beans/spring-beans.xsd
  http://www.springframework.org/schema/context
  http://www.springframework.org/schema/context/spring-context.xsd">
- <context:component-scan base-package="gdu.kr.test0515"/>
- <bean id="WriteImpl" class="gdu.kr.test0515"/>
+ <bean id="Writ" class="gdu.kr.test0515.WriteImpl">
+ <constructor-arg><ref bean="articleDao"/></constructor-arg> <!-- articleDao를 주입해줘 -->
+</bean>
+ <bean id="articleDao" class="gdu.kr.test0515.MariaDBArticleDao"/>
 </beans>
